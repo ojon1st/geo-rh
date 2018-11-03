@@ -1,0 +1,259 @@
+block topmenu
+  // Top Menu Items
+  nav.navbar.navbar-inverse.navbar-fixed-top
+    .mobile-only-brand.pull-left
+      .nav-header.pull-left
+        .logo-wrap
+          a(href='/admin')
+            img.brand-img(src='/img/logo.png', width=30, alt='brand')
+            span.brand-text GEO-RH
+      a#toggle_nav_btn.toggle-left-nav-btn.inline-block.ml-20.pull-left(href='javascript:void(0);')
+        i.zmdi.zmdi-menu
+      a#toggle_mobile_search.mobile-only-view(data-toggle='collapse', data-target='#search_form', href='javascript:void(0);')
+        i.zmdi.zmdi-search
+      a#toggle_mobile_nav.mobile-only-view(href='javascript:void(0);')
+        i.zmdi.zmdi-more
+      //form#search_form.top-nav-search.collapse.pull-left(role='search')
+        .input-group
+          input.form-control(type='text', name='example-input1-group2', placeholder='Search')
+          span.input-group-btn
+            button.btn.btn-default(type='button', data-target='#search_form', data-toggle='collapse', aria-label='Close', aria-expanded='true')
+              i.zmdi.zmdi-search
+    #mobile_only_nav.mobile-only-nav.pull-right
+      ul.nav.navbar-right.top-nav.pull-right
+        //li
+          a#open_right_sidebar(href='#')
+            i.zmdi.zmdi-settings.top-nav-icon
+        //li.dropdown.app-drp
+          a.dropdown-toggle(href='#', data-toggle='dropdown')
+            i.zmdi.zmdi-apps.top-nav-icon
+          ul.dropdown-menu.app-dropdown(data-dropdown-in='slideInRight', data-dropdown-out='flipOutX')
+            li
+              .app-nicescroll-bar
+                ul.app-icon-wrap.pa-10
+                  li
+                    a.connection-item(href='weather.html')
+                      i.zmdi.zmdi-cloud-outline.txt-info
+                      span.block weather
+                  li
+                    a.connection-item(href='inbox.html')
+                      i.zmdi.zmdi-email-open.txt-success
+                      span.block e-mail
+                  li
+                    a.connection-item(href='calendar.html')
+                      i.zmdi.zmdi-calendar-check.txt-primary
+                      span.block calendar
+                  li
+                    a.connection-item(href='vector-map.html')
+                      i.zmdi.zmdi-map.txt-danger
+                      span.block map
+                  li
+                    a.connection-item(href='chats.html')
+                      i.zmdi.zmdi-comment-outline.txt-warning
+                      span.block chat
+                  li
+                    a.connection-item(href='contact-card.html')
+                      i.zmdi.zmdi-assignment-account
+                      span.block contact
+            li
+              .app-box-bottom-wrap
+                hr.light-grey-hr.ma-0
+                a.block.text-center.read-all(href='javascript:void(0)')  more 
+        //li.dropdown.full-width-drp
+          a.dropdown-toggle(href='#', data-toggle='dropdown')
+            i.zmdi.zmdi-more-vert.top-nav-icon
+          ul.dropdown-menu.mega-menu.pa-0(data-dropdown-in='fadeIn', data-dropdown-out='fadeOut')
+            li.product-nicescroll-bar.row
+              ul.pa-20
+                li.col-md-3.col-xs-6.col-menu-list
+                  a(href='javascript:void(0);')
+                    .pull-left
+                      i.zmdi.zmdi-landscape.mr-20
+                      span.right-nav-text Dashboard
+                    .pull-right
+                      i.zmdi.zmdi-caret-down
+                    .clearfix
+                  hr.light-grey-hr.ma-0
+                  ul
+                    li
+                      a(href='index.html') Analytical
+                    li
+                      a(href='index2.html') Demographic
+                    li
+                      a(href='index3.html') Project
+                    li
+                      a(href='profile.html') profile
+                  a(href='widgets.html')
+                    .pull-left
+                      i.zmdi.zmdi-flag.mr-20
+                      span.right-nav-text widgets
+                    .pull-right
+                      span.label.label-warning 8
+                    .clearfix
+                  hr.light-grey-hr.ma-0
+                  a(href='documentation.html')
+                    .pull-left
+                      i.zmdi.zmdi-book.mr-20
+                      span.right-nav-text documentation
+                    .clearfix
+                  hr.light-grey-hr.ma-0
+                li.col-md-3.col-xs-6.col-menu-list
+                  a(href='javascript:void(0);')
+                    .pull-left
+                      i.zmdi.zmdi-shopping-basket.mr-20
+                      span.right-nav-text E-Commerce
+                    .pull-right
+                      span.label.label-success hot
+                    .clearfix
+                  hr.light-grey-hr.ma-0
+                  ul
+                    li
+                      a(href='e-commerce.html') Dashboard
+                    li
+                      a(href='product.html') Products
+                    li
+                      a(href='product-detail.html') Product Detail
+                    li
+                      a(href='add-products.html') Add Product
+                    li
+                      a(href='product-orders.html') Orders
+                    li
+                      a(href='product-cart.html') Cart
+                    li
+                      a(href='product-checkout.html') Checkout
+                li.col-md-6.col-xs-12.preview-carousel
+                  a(href='javascript:void(0);')
+                    .pull-left
+                      span.right-nav-text latest products
+                    .clearfix
+                  hr.light-grey-hr.ma-0
+                  .product-carousel.owl-carousel.owl-theme.text-center
+                    a(href='#')
+                      img(src='/img/chair.jpg', alt='chair')
+                      span Circle chair
+                    a(href='#')
+                      img(src='/img/chair2.jpg', alt='chair')
+                      span square chair
+                    a(href='#')
+                      img(src='/img/chair3.jpg', alt='chair')
+                      span semi circle chair
+                    a(href='#')
+                      img(src='/img/chair4.jpg', alt='chair')
+                      span wooden chair
+                    a(href='#')
+                      img(src='/img/chair2.jpg', alt='chair')
+                      span square chair
+        //li.dropdown.alert-drp
+          a.dropdown-toggle(href='#', data-toggle='dropdown')
+            i.zmdi.zmdi-notifications.top-nav-icon
+            span.top-nav-icon-badge 5
+          ul.dropdown-menu.alert-dropdown(data-dropdown-in='bounceIn', data-dropdown-out='bounceOut')
+            li
+              .notification-box-head-wrap
+                span.notification-box-head.pull-left.inline-block notifications
+                a.txt-danger.pull-right.clear-notifications.inline-block(href='javascript:void(0)')  clear all 
+                .clearfix
+                hr.light-grey-hr.ma-0
+            li
+              .streamline.message-nicescroll-bar
+                .sl-item
+                  a(href='javascript:void(0)')
+                    .icon.bg-green
+                      i.zmdi.zmdi-flag
+                    .sl-content
+                      span.inline-block.capitalize-font.pull-left.truncate.head-notifications
+                        | New subscription created
+                      span.inline-block.font-11.pull-right.notifications-time 2pm
+                      .clearfix
+                      p.truncate
+                        | Your customer subscribed for the basic plan. The customer will pay $25 per month.
+                hr.light-grey-hr.ma-0
+                .sl-item
+                  a(href='javascript:void(0)')
+                    .icon.bg-yellow
+                      i.zmdi.zmdi-trending-down
+                    .sl-content
+                      span.inline-block.capitalize-font.pull-left.truncate.head-notifications.txt-warning Server #2 not responding
+                      span.inline-block.font-11.pull-right.notifications-time 1pm
+                      .clearfix
+                      p.truncate Some technical error occurred needs to be resolved.
+                hr.light-grey-hr.ma-0
+                .sl-item
+                  a(href='javascript:void(0)')
+                    .icon.bg-blue
+                      i.zmdi.zmdi-email
+                    .sl-content
+                      span.inline-block.capitalize-font.pull-left.truncate.head-notifications 2 new messages
+                      span.inline-block.font-11.pull-right.notifications-time 4pm
+                      .clearfix
+                      p.truncate  The last payment for your G Suite Basic subscription failed.
+                hr.light-grey-hr.ma-0
+                .sl-item
+                  a(href='javascript:void(0)')
+                    .sl-avatar
+                      img.img-responsive(src='/img/avatar.jpg', alt='avatar')
+                    .sl-content
+                      span.inline-block.capitalize-font.pull-left.truncate.head-notifications Sandy Doe
+                      span.inline-block.font-11.pull-right.notifications-time 1pm
+                      .clearfix
+                      p.truncate
+                        | Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit
+                hr.light-grey-hr.ma-0
+                .sl-item
+                  a(href='javascript:void(0)')
+                    .icon.bg-red
+                      i.zmdi.zmdi-storage
+                    .sl-content
+                      span.inline-block.capitalize-font.pull-left.truncate.head-notifications.txt-danger 99% server space occupied.
+                      span.inline-block.font-11.pull-right.notifications-time 1pm
+                      .clearfix
+                      p.truncate consectetur, adipisci velit.
+            li
+              .notification-box-bottom-wrap
+                hr.light-grey-hr.ma-0
+                a.block.text-center.read-all(href='javascript:void(0)')  read all 
+                .clearfix
+        li.dropdown.auth-drp
+          a.dropdown-toggle.pr-0(href='#', data-toggle='dropdown')
+            img.user-auth-img.img-circle(src='/img/user.png', alt='user_auth')
+            span.user-online-status
+          ul.dropdown-menu.user-auth-dropdown(data-dropdown-in='flipInX', data-dropdown-out='flipOutX')
+            //li
+              a(href='profile.html')
+                i.zmdi.zmdi-account
+                span Profile
+            li
+              a(href='#')
+                i.zmdi.zmdi-card
+                span my balance
+            //li
+              a(href='inbox.html')
+                i.zmdi.zmdi-email
+                span Inbox
+            //li
+              a(href='#')
+                i.zmdi.zmdi-settings
+                span Settings
+            //li.divider
+            //li.sub-menu.show-on-hover
+              a.dropdown-toggle.pr-0.level-2-drp(href='#')
+                i.zmdi.zmdi-check.text-success
+                |  available
+              ul.dropdown-menu.open-left-side
+                li
+                  a(href='#')
+                    i.zmdi.zmdi-check.text-success
+                    span available
+                li
+                  a(href='#')
+                    i.zmdi.zmdi-circle-o.text-warning
+                    span busy
+                li
+                  a(href='#')
+                    i.zmdi.zmdi-minus-circle-outline.text-danger
+                    span offline
+            //li.divider
+            li
+              a(href='#')
+                i.zmdi.zmdi-power
+                span Se déconnecter

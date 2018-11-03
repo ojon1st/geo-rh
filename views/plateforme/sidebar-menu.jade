@@ -1,0 +1,43 @@
+block sidebarmenu
+  .fixed-sidebar-left(style='position: fixed!important')
+          ul.nav.navbar-nav.side-nav.nicescroll-bar
+            li.navigation-header
+              span Bienvenue
+              i.zmdi.zmdi-more
+            li
+              a.active(href='/admin')
+                .pull-left
+                  i.zmdi.zmdi-home
+                  span.right-nav-text Accueil
+                .pull-right
+                .clearfix
+            li
+              a(href='javascript:void(0);', data-toggle='collapse', data-target='#conge_dr')
+                .pull-left
+                  i.zmdi.zmdi-paypal-alt
+                  span.right-nav-text Congés
+                .pull-right
+                  i.zmdi.zmdi-caret-down
+                .clearfix
+              ul#conge_dr.collapse.collapse-level-1
+                li
+                  a(href='/users/mon-espace/formulaire_demande_conge') Nouvelle demande
+                li
+                  a(href='#') En cours
+                li
+                  a(href='#') Historique
+            li
+              a(href='javascript:void(0);', data-toggle='collapse', data-target='#perm_dr')
+                .pull-left
+                  i.zmdi.zmdi-paypal-alt
+                  span.right-nav-text Permissions
+                .pull-right
+                  i.zmdi.zmdi-caret-down
+                .clearfix
+              ul#perm_dr.collapse.collapse-level-1
+                li
+                  a(href='#') Nouvelle demande
+                li
+                  a(href='#') En cours
+                li
+                  a(href='#') Historique

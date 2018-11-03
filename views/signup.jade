@@ -1,0 +1,72 @@
+extends layout
+
+block content
+  // Preloader
+  .preloader-it
+    .la-anim-1
+  // /Preloader
+  //#particle-canvas
+  .wrapper.pa-0
+    header.sp-header
+      .sp-logo-wrap.pull-left
+        a(href='index.html')
+          img.brand-img.mr-10(src='dist/img/logo.png', alt='brand')
+          span.brand-text Hound
+      .form-group.mb-0.pull-right
+        span.inline-block.pr-10 Already have an account?
+        a.inline-block.btn.btn-info.btn-rounded.btn-outline(href='login.html') Sign In
+      .clearfix
+    // Main Content
+    .page-wrapper.pa-0.ma-0.auth-page
+      .container-fluid
+        // Row
+        .table-struct.full-width.full-height
+          .table-cell.vertical-align-middle.auth-form-wrap
+            .auth-form.ml-auto.mr-auto.no-float
+              .row
+                .col-sm-12.col-xs-12
+                  .mb-30
+                    h3.text-center.txt-dark.mb-10 Sign up to Hound
+                    h6.text-center.nonecase-font.txt-grey Enter your details below
+                  .form-wrap
+                    form(method='POST' action='')
+                      .form-group
+                        label.control-label.mb-10(for='exampleInputName_1') Matricule
+                        input#exampleInputName_1.form-control(type='text',name='matricule', required='', placeholder='Matricule')
+                      .form-group
+                        label.control-label.mb-10(for='exampleInputEmail_2') Prenom
+                        input.form-control(type='text', required='', name='prenom', placeholder='Enter prenom')
+                      .form-group
+                        label.control-label.mb-10(for='exampleInputEmail_2') Nom
+                        input.form-control(type='text', required='',name='nom', placeholder='Enter nom')
+                      .form-group
+                        label.control-label.mb-10(for='exampleInputEmail_2') CEGE
+                        input.form-control(type='text', required='',name='cege', placeholder='Enter CEGE')
+                      .form-group
+                        label.pull-left.control-label.mb-10(for='exampleInputpwd_2') Password
+                        input.form-control(type='password', required='',name='password', placeholder='Enter pwd')
+                      //.form-group
+                        label.pull-left.control-label.mb-10(for='exampleInputpwd_3') Confirm Password
+                        input#exampleInputpwd_3.form-control(type='password', required='', placeholder='Enter pwd')
+                      .form-group
+                        .checkbox.checkbox-primary.pr-10.pull-left
+                          input#checkbox_2(required='', type='checkbox')
+                          label(for='checkbox_2')
+                            | I agree to all 
+                            span.txt-primary Terms
+                        .clearfix
+                      .form-group.text-center
+                        button.btn.btn-info.btn-rounded(type='submit') sign Up
+        // /Row
+        // /Main Content
+        // /#wrapper
+        // JavaScript
+        // jQuery
+        script(src='/vendors/bower_components/jquery/dist/jquery.min.js')
+        // Bootstrap Core JavaScript
+        script(src='/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js')
+        script(src='/vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js')
+        // Slimscroll JavaScript
+        script(src='/dist/js/jquery.slimscroll.js')
+        // Init JavaScript
+        script(src='/dist/js/init.js')

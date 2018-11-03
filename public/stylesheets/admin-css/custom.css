@@ -1,0 +1,146 @@
+.new-card-view{
+    background: #fff;
+    border: 1px solid rgba(33, 33, 33, 0.1);
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+.page-wrapper1{
+    margin-left: 225px;
+    padding: 66px 6px;
+    background: #f7f7f7;
+    position: relative;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+    left: 0;
+}
+
+.btnpanel-primary{
+    background-color: #337ab7!important;
+    border: none!important;
+    border-radius: 0;
+}
+
+
+.btnpanel-danger{
+    background-color: #d9534f!important;
+    border: none!important;
+    border-radius: 0;
+}
+.btnpanel-warning{
+    background-color: #f0ad4e!important;
+    border: none!important;
+    border-radius: 0;
+}
+.btnpanel-success{
+    background-color: #5cb85c!important;
+    border: none!important;
+    border-radius: 0;
+}
+.mt-100{
+    margin-top: 100px;
+}
+
+.fs-t16{
+    font-size: 16px;
+}
+.table1 {
+    border-color: rgba(33, 33, 33, 0.1) !important;
+        width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    border-spacing: 0;
+    border-collapse: collapse;
+    display: table;
+    
+    vertical-align: middle;
+        line-height: 1.42857143;
+}
+.table1 > tbody >tr >td{
+    padding: 16px;
+    border-top: 1px solid rgba(33, 33, 33, 0.1);
+    vertical-align: middle;
+        line-height: 1.42857143;
+    margin: 0;
+        border: 0;
+    font-size: 100%;
+    font: inherit;
+        display: table-cell;
+}
+
+#myTabletoggle >thead >tr >td {
+    display: table-cell;
+    padding: 16px;
+    border-top: 1px solid rgba(33, 33, 33, 0.1);
+    vertical-align: middle;
+    margin: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    line-height: 1.42857143;
+}
+
+.duplicatetd{
+    padding: 16px!important;
+    border-top: 1px solid rgba(33, 33, 33, 0.1)!important;
+    vertical-align: middle!important;
+    line-height: 1.42857143!important;
+    margin: 0!important;
+    border: 0!important;
+    font-size: 100%!important;
+    font: inherit!important;
+    display: table-cell!important;
+    border-collapse: collapse!important;
+}
+
+
+
+
+/*@import "compass/css3";*/
+
+.table-editable {
+  position: relative;
+  
+  .glyphicon {
+    font-size: 20px;
+  }
+}
+
+.table-remove {
+  color: #700;
+  cursor: pointer;
+  
+  &:hover {
+    color: #f00;
+  }
+}
+
+.table-up, .table-down {
+  color: #007;
+  cursor: pointer;
+  
+  &:hover {
+    color: #00f;
+  }
+}
+
+.table-add {
+  color: #070;
+  cursor: pointer;
+  position: absolute;
+  top: 8px;
+  right: 0;
+  
+  &:hover {
+    color: #0b0;
+  }
+}

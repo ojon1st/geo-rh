@@ -1,0 +1,64 @@
+extends layout
+
+block content
+  // Preloader
+  .preloader-it
+    .la-anim-1
+  // /Preloader
+  //#particle-canvas
+  .wrapper.pa-0
+    header.sp-header
+      .sp-logo-wrap.pull-left
+        a(href='index.html')
+          img.brand-img.mr-10(src='/dist/img/logo.png', alt='brand')
+          span.brand-text GEO-RH
+      .form-group.mb-0.pull-right
+        span.inline-block.pr-10 Don't have an account?
+        a.inline-block.btn.btn-info.btn-rounded.btn-outline(href='/register') Sign Up
+      .clearfix
+    // Main Content
+    .page-wrapper.pa-0.ma-0.auth-page
+      .container-fluid
+        // Row
+        .table-struct.full-width.full-height
+          .table-cell.vertical-align-middle.auth-form-wrap
+            .auth-form.ml-auto.mr-auto.no-float
+              .row
+                .col-sm-12.col-xs-12
+                  .mb-30
+                    h3.text-center.txt-dark.mb-10 Bienvenue sur GEO-RH
+                    h6.text-center.nonecase-font.txt-grey Entrez les informations pour vous connecter
+                  .form-wrap
+                    form(method='POST' action='')
+                      .form-group
+                        label.control-label.mb-10(for='') Matricule
+                        input#exampleInputEmail_2.form-control(type='string', name='matricule', required='', placeholder='Numéro de matricule')
+                      .form-group
+                        label.pull-left.control-label.mb-10(for='') Mot de passe
+                        a.capitalize-font.txt-primary.block.mb-10.pull-right.font-12(href='') vous avez oublié votre mot de passe ?
+                        .clearfix
+                        input#exampleInputpwd_2.form-control(type='password', name='password', required='', placeholder='Mot de passe')
+                      .form-group
+                        .checkbox.checkbox-primary.pr-10.pull-left
+                          input#checkbox_2(type='checkbox')
+                          label(for='')  Se souvenir de moi
+                        .clearfix
+                      .form-group.text-center
+                        button.btn.btn-warning.btn-rounded(type='submit') se connecter
+      // /Row
+      // /Main Content
+      // /#wrapper
+      // JavaScript
+      // jQuery
+      script(src='/vendors/bower_components/jquery/dist/jquery.min.js')
+      // Bootstrap Core JavaScript
+      script(src='/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js')
+      script(src='/vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js')
+      // Slimscroll JavaScript
+      script(src='/dist/js/jquery.slimscroll.js')
+      // Init JavaScript
+      script(src='/dist/js/init.js')
+      //script(src='/javascripts/particle.js')
+// JS SCRIPTS
+//block js_scripts
+  include indexscripts

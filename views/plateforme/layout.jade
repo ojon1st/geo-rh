@@ -1,0 +1,45 @@
+block config
+  include ../config
+doctype html
+html
+  head
+    title #{siteTitle}
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+    meta(name='description', content='')
+    meta(name='keywords', content='')
+    meta(name='author', content='')
+
+    block cscripts
+      link(rel='shortcut icon', href='favicon.ico')
+      link(rel='icon', href='/img/favicon.ico', type='image/x-icon')
+      // Custom CSS
+      link(href='/stylesheets/admin-css/style.css', rel='stylesheet', type='text/css')
+      link(href='/stylesheets/admin-css/custom.css', rel='stylesheet', type='text/css')
+  body
+    // Preloader
+    .preloader-it
+    .la-anim-1
+    .wrapper.theme-1-active.pimary-color-blue
+      block topmenu
+        include top-menu
+      // /Top Menu Items
+      // Left Sidebar Menu
+      block sidebarmenu
+        include sidebar-menu
+      // /Left Sidebar Menu
+      // Main Content
+      .page-wrapper
+        .container-fluid.pt-25
+          block contenu
+        block footer
+            include footer
+        // /Footer
+      // /Main Content
+    // /#wrapper
+    block jscripts
+        // JavaScript
+        // jQuery
+        script(src='/javascripts/admin-js/jquery.min.js')
+        // Bootstrap Core JavaScript
+        script(src='/javascripts/admin-js/bootstrap.min.js')
