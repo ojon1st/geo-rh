@@ -91,7 +91,7 @@ exports.demande_conge_page_post = [
                     function (err, resultat2) {
                         if (err) throw new Error(err);
                         console.log('Agent est le titulaire de l\'entité');
-                        newdemande.Destinataire.AgentSup = resultat2.titulaire
+                        newdemande.Destinataire.AgentSup[0]['AgentSup'] = resultat2.titulaire._id
                     });
             }
             else {
