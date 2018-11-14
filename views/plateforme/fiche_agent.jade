@@ -1,0 +1,101 @@
+extends layout
+append cscripts
+    link(href='/stylesheets/admin-css/fancy-buttons.css', rel='stylesheet', type='text/css')
+block contenu
+    .row
+        .col-sm-12
+            center
+                h4 Fiche de l'agent #{agent.matricule} :
+            .clearfix
+            br
+            br
+            .panel.panel-default.card-view
+                .panel-wrapper.collapse.in
+                    .panel-body
+                        h4 Etat civil
+                        br
+                        .row#detail
+                            .col-sm-6
+                                label Nom :........................................... #{agent.nom}
+                            .col-sm-6
+                                label Prénom :........................................... #{agent.prenom}
+                        br
+                        .row#detail
+                            .col-sm-6
+                                label Date de naissance :........................................... #{agent.userdob}
+                            .col-sm-6
+                                label Lieu de naissance :........................................... #{agent.userlob}
+                        br
+                        .row#detail
+                            .col-sm-6
+                                label Nationnalité :........................................... #{agent.nationnalite}
+                            .col-sm-6
+                                label Adresse :........................................... #{agent.adresse}
+                        br
+                        .row#detail
+                            .col-sm-6
+                                label Contact :........................................... #{agent.contact}
+                            .col-sm-6
+                                label Email :........................................... #{agent.email}
+                        br
+                        .row#detail
+                            .col-sm-6
+                                label Situation matrimonial :........................................... #{agent.smatrimoniale.nom}
+                            .col-sm-6
+                                label Sexe :........................................... #{agent.genre}
+
+            .panel.panel-default.card-view
+                .panel-wrapper.collapse.in
+                    .panel-body
+                        h4 Situation professionnelle
+                        br
+                        .row#detail
+                            .col-sm-6
+                                label Profession :........................................... #{agent.profession}
+                            .col-sm-6
+                                label Structure :........................................... #{agent.entite.titre}
+                        br
+                        br
+                        .row#detail
+                            .col-sm-6
+                                label Date d'engagement :........................................... #{agent.date_engagement}
+                            .col-sm-6
+                                label Date de départ à la retraite :........................................... 12/02/2025
+                        br
+                        br
+                        .row#detail
+                            .col-sm-6
+                                label Compétences :........................................... Gestion des projets,management,communication
+                            .col-sm-6
+                                label Poste occupé :........................................... #{agent.poste}
+                        br
+                        br
+                        .row#detail
+                            .col-sm-6
+                                label Catégorie :........................................... #{agent.cege.code_cege}
+                            .col-sm-6
+                                label Lieu d'affectation :........................................... #{agent.lieu_affectation}
+                        br
+                        br
+                        .row#detail
+
+                            .col-sm-10
+                                label Direction :........................................... #{agent.entite.titre}
+
+
+    .row
+        .col-sm-12
+            .col-sm-6
+                button.btn.btn-success.btn-outline.fancy-button.btn-0 Imprimer la fiche
+            .col-sm-offset-4.col-sm-2
+                a(href='/users/mon-espace/personnel').btn.btn-warning.btn-outline.fancy-button.btn-0 Fermer
+
+
+append jscripts
+    script(src='/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js')
+    script(src='/javascripts/admin-js/dataTables-data.js')
+    script(src='/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js')
+    script(src='/vendors/bower_components/switchery/dist/switchery.min.js')
+    script(src='/javascripts/admin-js/dropdown-bootstrap-extended.js')
+    script(src='/javascripts/admin-js/init.js')
+    script(src='/javascripts/admin-js/custom.js')

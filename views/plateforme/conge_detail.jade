@@ -1,0 +1,70 @@
+extends layout
+block contenu
+    row
+        .col-sm-12
+            center
+                h4 Détails du congé :
+            .clearfix
+            br
+            br
+            .panel.panel-default.card-view
+                .panel-wrapper.collapse.in
+                    .panel-body
+                        .row
+                            .form-group.col-sm-3.col-xs-12
+                                label.control-label.mb-10(for='')
+                                    | Date de la demande :
+                                .input-group
+                                    .input-group-addon
+                                        i.zmdi.zmdi-calendar
+                                    input.form-control(type='text',  value=(conge.date_envoi), disabled )
+                            .form-group.col-sm-3.col-xs-12
+                                label.control-label.mb-10(for='')
+                                    | Date de départ :
+                                .input-group
+                                    .input-group-addon
+                                        i.zmdi.zmdi-calendar
+                                    input.form-control(type='text',  value=(conge.date_depart), disabled )
+                            .form-group.col-sm-3.col-xs-12
+                                label.control-label.mb-10(for='')
+                                    | Date de retour :
+                                .input-group
+                                    .input-group-addon
+                                        i.zmdi.zmdi-calendar
+                                    input.form-control(type='text',  value=(conge.date_retour), disabled )
+                            .form-group.col-sm-3.col-xs-12
+                                label.control-label.mb-10(for='')
+                                    | Type de congé :
+                                .input-group
+                                    input.form-control(type='text',  value=(conge.congestype.nom), disabled )
+                            .form-group.col-sm-3.col-xs-12
+                                label.control-label.mb-10(for='')
+                                    | Etat de la demande :
+                                .input-group
+                                    input.form-control(type='text',  value=(conge.etat_demande), disabled )
+                            .form-group.col-sm-3.col-xs-12
+                                label.control-label.mb-10(for='')
+                                    | Niveau actuel de la demande :
+                                .input-group
+                                    input.form-control(type='text',  value="Sécrétariat DRH", disabled )
+                            .form-group.col-sm-6.col-xs-12
+                                label.control-label.mb-10(for='')
+                                    | Corps de la demande :
+                                .input-group
+                                    textarea(type='text',disabled) #{conge.corps_demande}
+
+
+
+
+
+
+
+
+append jscripts
+    script(src='/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js')
+    script(src='/javascripts/admin-js/dataTables-data.js')
+    script(src='/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js')
+    script(src='/vendors/bower_components/switchery/dist/switchery.min.js')
+    script(src='/javascripts/admin-js/dropdown-bootstrap-extended.js')
+    script(src='/javascripts/admin-js/init.js')
+    script(src='/javascripts/admin-js/custom.js')

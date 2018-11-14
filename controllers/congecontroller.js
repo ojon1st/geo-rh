@@ -1,6 +1,7 @@
-var TypeConge = require('../models/conges_type');
+var TypeConge = require('../models/congestype');
 var Hierarchie = require('../models/hierarchie');
 var User = require('../models/user');
+var Dmdconge = require('../models/dmd_conge');
 const Newdemande = require('../models/dmd_conge');
 var async = require('async');
 var bcrypt = require('bcryptjs');
@@ -46,18 +47,18 @@ exports.demande_conge_page_post = [
     (req, res, next) => {
         var te = req.body.daterange;
         var newdemande = new Newdemande({
-            Expediteur: req.body.userid,
-            Type_conge: req.body.type_conge,
-            Date_depart: te.substr(0, 10),
-            Date_retour: te.substr(13, 23),
-            Corps_demande: req.body.corps_d,
-            Etat_demande: 'ouvert',
-            Destinataire: {
+            expediteur: req.body.userid,
+            congestype: req.body.type_conge,
+            date_depart: te.substr(0, 10),
+            date_retour: te.substr(13, 23),
+            corps_demande: req.body.corps_d,
+            etat_demande: 'ouvert',
+            destinataire: {
                // AgentSup:'',
-                Decision: 0,
-                Date_validation: date
+                decision: 0,
+                date_validation: date
             },
-            Date_envoi: date
+            date_envoi: date
         });
         //console.log('newdemande: ' + newdemande);
 
@@ -91,17 +92,17 @@ exports.demande_conge_page_post = [
                     function (err, resultat2) {
                         if (err) throw new Error(err);
                         console.log('Agent est le titulaire de l\'entité');
-                        newdemande.Destinataire.AgentSup[0]['AgentSup'] = resultat2.titulaire._id
+                        newdemande.destinataire[0]['agentSup'] = resultat2.titulaire._id
                     });
             }
             else {
                 //console.log('Agent titulaire:'+newdemande.Destinataire[0]['Statut']);
-                newdemande.Destinataire[0]['AgentSup'] = resultat.hierarchie_agent.titulaire._id
+                newdemande.destinataire[0]['agentSup'] = resultat.hierarchie_agent.titulaire._id
             }
 
 
-            if (newdemande.Destinataire.AgentSup != '') {
-                console.log('4...........' + newdemande.Destinataire.AgentSup);
+            if (newdemande.destinataire[0]['agentSup']  != '') {
+                console.log('4...........' + newdemande.destinataire.agentSup);
                 newdemande.save(function (err) {
                     if (err) {
                         return next(err)
@@ -117,19 +118,38 @@ exports.demande_conge_page_post = [
 ];
 
 
-/*
-exports.user_list = function(req, res, next) {
-    // Get all authors and genres for form
-    async.parallel({
-        users: function(callback) {
-            User.find()
-                .exec(callback);
-        },
-
-    }, function(err, results) {
-        console.log(results);
-        /*res.render('plateforme/classe', { title: 'Liste des utilisateurs', users_list:results.users});*/
-/*
-    });
+exports.demande_conge_encour_get = function (req, res, next) {
+    Dmdconge.find({'expediteur':req.user._id })
+        .populate('user')
+        .populate('congestype')
+        .exec(function (err, encours) {
+            if (err) { return next(err); }
+            // Successful, so render
+            res.render('plateforme/conge_encours', { title: 'Mes congés en cours', en_cour:  encours});
+        });
 };
-*/
+
+
+
+exports.conge_detail = function(req, res, next) {
+
+    async.parallel({
+        conge: function(callback) {
+
+            Dmdconge.findById(req.params.id)
+                .populate('congestype')
+                .populate('user')
+                .exec(callback);
+        }
+    }, function(err, results) {
+        if (err) { return next(err); }
+        if (results.conge==null) { // No results.
+            var err = new Error('conge not found');
+            err.status = 404;
+            return next(err);
+        }
+        // Successful, so render.
+        res.render('plateforme/conge_detail', { title: 'Détail', conge:  results.conge} );
+    });
+
+};

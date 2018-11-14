@@ -4,7 +4,7 @@ block contenu
         .col-sm-12
             .panel.panel-default.card-view
                 center
-                    h4 Le personnel du ministère :
+                    h5 Mes congés en cours :
                     .clearfix
                 .panel-wrapper.collapse.in
                     .panel-body
@@ -13,26 +13,22 @@ block contenu
                                 table#datable_1.table.table-hover.display.pb-30
                                     thead
                                         tr
-                                            th Matricule
-                                            th Nom
-                                            th Prénom
-                                            th Service
-                                            th Catégorie
-                                            th Etat
+                                            th Type de congé
+                                            th Date de départ
+                                            th Date de retour
+                                            th Etat de la demande
                                             th détails
 
                                     tbody
-                                        each agent in personnel
+                                        each encour in en_cour
                                             tr#tr
-                                                td #{agent.matricule}
-                                                td #{agent.nom}
-                                                td #{agent.prenom}
-                                                td #{agent.entite.titre}
-                                                td #{agent.cege.code_cege}
-                                                td #{agent.etatagent.titre}
+                                                td #{encour.congestype.nom}
+                                                td #{encour.date_depart}
+                                                td #{encour.date_retour}
+                                                td #{encour.etat_demande}
                                                 td
                                                     span.label.label-success
-                                                        a(href=agent.url) Voir fiche >>
+                                                        a(href=encour.url) Détails
 append jscripts
     script(src='/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js')
     script(src='/javascripts/admin-js/dataTables-data.js')

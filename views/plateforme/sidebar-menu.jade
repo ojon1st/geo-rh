@@ -23,7 +23,7 @@ block sidebarmenu
                 li
                   a(href='/users/mon-espace/formulaire_demande_conge') Nouvelle demande
                 li
-                  a(href='#') En cours
+                  a(href='/users/mon-espace/encours') En cours
                 li
                   a(href='#') Historique
             li
@@ -41,3 +41,67 @@ block sidebarmenu
                   a(href='#') En cours
                 li
                   a(href='#') Historique
+            li
+              a(href='/users/mon-espace/personnel')
+                .pull-left
+                  i.zmdi.zmdi-paypal-alt
+                  span.right-nav-text Personnel
+                .clearfix
+            li
+                a(href='#')
+                    .pull-left
+                        i.zmdi.zmdi-paypal-alt
+                        span.right-nav-text Avancements
+                    .clearfix
+            li
+              a(href='javascript:void(0);', data-toggle='collapse', data-target='#conge_d')
+                  .pull-left
+                      i.zmdi.zmdi-paypal-alt
+                      span.right-nav-text Formations
+                  .pull-right
+                      i.zmdi.zmdi-caret-down
+                  .clearfix
+              ul#conge_d.collapse.collapse-level-1
+                  li
+                      a(href='/users/mon-espace/formation') Prévisions
+                  li
+                      a(href='/users/mon-espace/encours') En cours
+                  li
+                      a(href='#') Historique
+              li
+                  a(href='#')
+                      .pull-left
+                          i.zmdi.zmdi-paypal-alt
+                          span.right-nav-text Evaluations annuelles
+                      .clearfix
+            li
+                a(href='#')
+                    .pull-left
+                        i.zmdi.zmdi-paypal-alt
+                        span.right-nav-text Détachements
+                    .clearfix
+            li
+                a(href='#')
+                    .pull-left
+                        i.zmdi.zmdi-paypal-alt
+                        span.right-nav-text Retraite
+                    .clearfix
+            li
+                a(href='#')
+                    .pull-left
+                        i.zmdi.zmdi-paypal-alt
+                        span.right-nav-text Etat nominatif
+                    .clearfix
+            li
+                a(href='/users/mon-espace/contractuels')
+                    .pull-left
+                        i.zmdi.zmdi-paypal-alt
+                        span.right-nav-text Contractuels
+                    .clearfix
+            li
+                a(href='/users/mon-espace/retraites')
+                    .pull-left
+                        i.zmdi.zmdi-paypal-alt
+                        span.right-nav-text Retraités
+                    .clearfix
+

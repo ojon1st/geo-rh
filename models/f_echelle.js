@@ -8,4 +8,4 @@ var FEchelleSchema = new Schema({
 });
 
 // Export model.
-module.exports = mongoose.model('FEchelle', FEchelleSchemaa);
+module.exports = mongoose.model('FEchelle', FEchelleSchema);

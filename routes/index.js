@@ -20,6 +20,7 @@ router.post('/register', user_controller.user_register_post);
 // Logout
 router.get('/logout', user_controller.user_logout_get);
 
+
 function ensureAuthenticated(req, res, next){
     if (req.isAuthenticated()){
         return next();

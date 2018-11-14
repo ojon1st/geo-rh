@@ -1,6 +1,3 @@
-// fiche personnelle de l'agent;
-
-//var Counter = require('../models/counter');
 var bcrypt = require('bcryptjs');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
@@ -10,14 +7,25 @@ var SALT_WORK_FACTOR = 10;
 const UserSchema = new Schema({
     prenom: {type: String, required: true},
     nom: {type: String, required: true},
+    nationnalite:{type: String},
     matricule: {type: String, required: true},
     password: {type: String, required: true},
     entite:{type:Schema.ObjectId,ref: 'Entite', required:true},
     cege: {type: Schema.ObjectId, ref: 'Fcege', required: true},
+    etatagent:{type:Schema.ObjectId,ref: 'Etatagent', required:true},
     email: {type: String},
     profileimage:{type: String, default:''},
     genre:{type: String, default:'' },
     userdob:{type: String},
+    userlob:{type: String},
+    contact: {type: String},
+    adresse: {type: String},
+    smatrimoniale:{type:Schema.ObjectId,ref: 'Smatrimoniale', required:true},
+    profession:{type: String},
+    poste:{type: String},
+    date_engagement: {type: String},
+    lieu_affectation:{type:String},
+    poste_budgetaire:{type:String}
 });
 
     //poste: {type: Schema.ObjectId, ref: 'FPoste', required: true},
@@ -50,7 +58,7 @@ UserSchema.pre('save', function(next){
 UserSchema
 .virtual('url')
 .get(function () {
-  return 'users/mon-espace';
+  return 'personnel/'+this._id;
 });
 
 //UserSchema.plugin(passportLocalMongoose);

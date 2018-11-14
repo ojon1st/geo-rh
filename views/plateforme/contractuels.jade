@@ -4,7 +4,7 @@ block contenu
         .col-sm-12
             .panel.panel-default.card-view
                 center
-                    h4 Le personnel du ministère :
+                    h4 Les contractuels :
                     .clearfix
                 .panel-wrapper.collapse.in
                     .panel-body
@@ -17,8 +17,6 @@ block contenu
                                             th Nom
                                             th Prénom
                                             th Service
-                                            th Catégorie
-                                            th Etat
                                             th détails
 
                                     tbody
@@ -28,11 +26,9 @@ block contenu
                                                 td #{agent.nom}
                                                 td #{agent.prenom}
                                                 td #{agent.entite.titre}
-                                                td #{agent.cege.code_cege}
-                                                td #{agent.etatagent.titre}
                                                 td
                                                     span.label.label-success
-                                                        a(href=agent.url) Voir fiche >>
+                                                        a(href=agent.url) Voir plus >>>
 append jscripts
     script(src='/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js')
     script(src='/javascripts/admin-js/dataTables-data.js')

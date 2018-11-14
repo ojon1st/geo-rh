@@ -4,7 +4,7 @@ block contenu
         .col-sm-12
             .panel.panel-default.card-view
                 center
-                    h4 Le personnel du ministère :
+                    h4 Les retraités :
                     .clearfix
                 .panel-wrapper.collapse.in
                     .panel-body
@@ -17,9 +17,8 @@ block contenu
                                             th Nom
                                             th Prénom
                                             th Service
-                                            th Catégorie
-                                            th Etat
-                                            th détails
+                                            th Date de départ à la retraite
+                                            th Reférence de l'arrêté
 
                                     tbody
                                         each agent in personnel
@@ -28,11 +27,9 @@ block contenu
                                                 td #{agent.nom}
                                                 td #{agent.prenom}
                                                 td #{agent.entite.titre}
-                                                td #{agent.cege.code_cege}
-                                                td #{agent.etatagent.titre}
-                                                td
-                                                    span.label.label-success
-                                                        a(href=agent.url) Voir fiche >>
+                                                td 20/05/2017
+                                                td ARRETE N°056/ME du 15/05/2017
+
 append jscripts
     script(src='/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js')
     script(src='/javascripts/admin-js/dataTables-data.js')

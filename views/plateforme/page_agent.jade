@@ -1,13 +1,11 @@
 extends layout
 append cscripts
     link(href='/stylesheets/admin-css/morris.css', rel='stylesheet', type='text/css')
-    // Data table CSS
     link(href='/stylesheets/admin-css/jquery.dataTables.min.css', rel='stylesheet', type='text/css')
     link(href='/stylesheets/admin-css/jquery.toast.min.css', rel='stylesheet', type='text/css')
 block contenu
-  // Row
   .row
-    .col-lg-4.col-md-6.col-sm-6.col-xs-12
+    .col-lg-3.col-md-6.col-sm-6.col-xs-12
       .panel.panel-default.card-view.pa-0
         .panel-wrapper.collapse.in
           .panel-body.pa-0
@@ -17,11 +15,11 @@ block contenu
                   .col-xs-6.text-center.pl-0.pr-0.data-wrap-left
                     //span.txt-light.block.counter
                       span.counter-anim 914,001
-                    span.weight-500.uppercase-font.txt-light.block(style='font-size:50px') Congé
+                    span.weight-500.uppercase-font.txt-light.block(style='font-size:30px') Congé
                   .col-xs-6.text-center.pl-0.pr-0.data-wrap-right
                     i.zmdi.zmdi-male-female.txt-light.data-right-rep-icon
           a.button.btn.btn-danger.collapse.in.btnpanel-danger(href='/users/mon-espace/formulaire_demande_conge')(style='width: 100%') Nouvelle Demande
-    .col-lg-4.col-md-6.col-sm-6.col-xs-12
+    .col-lg-3.col-md-6.col-sm-6.col-xs-12
       .panel.panel-default.card-view.pa-0
         .panel-wrapper.collapse.in
           .panel-body.pa-0
@@ -32,7 +30,7 @@ block contenu
                     //span.txt-light.block.counter
                       span.counter-anim 46.43
                       | %
-                    span.weight-500.uppercase-font.txt-light.block(style='font-size:38px') Permission
+                    span.weight-500.uppercase-font.txt-light.block(style='font-size:30px') Permission
                   .col-xs-6.text-center.pl-0.pr-0.data-wrap-right
                     i.zmdi.zmdi-library.txt-light.data-right-rep-icon
                   //
@@ -40,34 +38,121 @@ block contenu
                     <div id="sparkline_4" style="width: 100px; overflow: hidden; margin: 0px auto;"></div>
                     </div>
           a.button.btn.btn-primary.collapse.in.btnpanel-warning(href='admin/matieres')(style='width: 100%') Nouvelle Demande
-    
+
+    .col-lg-3.col-md-6.col-sm-6.col-xs-12
+      .panel.panel-default.card-view.pa-0
+        .panel-wrapper.collapse.in
+          .panel-body.pa-0
+            .sm-data-box.bg-green
+              .container-fluid
+                .row
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-left
+                      //span.txt-light.block.counter
+                        span.counter-anim 914,001
+                      span.weight-500.uppercase-font.txt-light.block(style='font-size:30px') Avancements
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-right
+        a.button.btn.btn-danger.collapse.in.btnpanel-success(href='/users/mon-espace/formulaire_demande_conge')(style='width: 100%') Avancements
+
+    .col-lg-3.col-md-6.col-sm-6.col-xs-12
+      .panel.panel-default.card-view.pa-0
+        .panel-wrapper.collapse.in
+          .panel-body.pa-0
+            .sm-data-box.bg-pink
+              .container-fluid
+                .row
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-left
+                      span.weight-500.uppercase-font.txt-light.block(style='font-size:30px') Formations
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-right
+        a.button.btn.btn-danger.collapse.in.btnpanel-pink(href='/users/mon-espace/formation')(style='width: 100%') Nouvelle prévision
+
+  .row
+    .col-lg-3.col-md-6.col-sm-6.col-xs-12
+      .panel.panel-default.card-view.pa-0
+        .panel-wrapper.collapse.in
+          .panel-body.pa-0
+            .sm-data-box.bg-blue
+              .container-fluid
+                .row
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-left
+                    span.weight-500.uppercase-font.txt-light.block(style='font-size:20px') Evaluation annuelle
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-right
+        a.button.btn.btn-primary.collapse.in.btnpanel-blue(href='/users/mon-espace/formulaire_demande_conge')(style='width: 100%') Evaluation annuelle
+
+    .col-lg-3.col-md-6.col-sm-6.col-xs-12
+      .panel.panel-default.card-view.pa-0
+        .panel-wrapper.collapse.in
+          .panel-body.pa-0
+            .sm-data-box.bg-primary
+              .container-fluid
+                .row
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-left
+                    span.weight-500.uppercase-font.txt-light.block(style='font-size:30px') Détachement
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-right
+            a.button.btn.btn-danger.collapse.in.btnpanel-primary(href='/users/mon-espace/formulaire_demande_conge')(style='width: 100%') Détachement
+
+    .col-lg-3.col-md-6.col-sm-6.col-xs-12
+      .panel.panel-default.card-view.pa-0
+        .panel-wrapper.collapse.in
+          .panel-body.pa-0
+            .sm-data-box.bg-red
+              .container-fluid
+                .row
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-left
+                    span.weight-500.uppercase-font.txt-light.block(style='font-size:30px') Retraite
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-right
+        a.button.btn.btn-danger.collapse.in.btnpanel-red(href='/users/mon-espace/formulaire_demande_conge')(style='width: 100%') Retraite
+
+    .col-lg-3.col-md-6.col-sm-6.col-xs-12
+      .panel.panel-default.card-view.pa-0
+        .panel-wrapper.collapse.in
+          .panel-body.pa-0
+            .sm-data-box.bg-yellow
+              .container-fluid
+                .row
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-left
+                    span.weight-500.uppercase-font.txt-light.block(style='font-size:30px') Contractuels
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-right
+        a.button.btn.btn-yellow.collapse.in.btnpanel-warning(href='/users/mon-espace/formulaire_demande_conge')(style='width: 100%') Contractuels
+  .row
+    .col-lg-3.col-md-6.col-sm-6.col-xs-12
+      .panel.panel-default.card-view.pa-0
+        .panel-wrapper.collapse.in
+          .panel-body.pa-0
+            .sm-data-box.bg-yellow
+              .container-fluid
+                .row
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-left
+                    span.weight-500.uppercase-font.txt-light.block(style='font-size:30px') Etat nominatif
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-right
+        a.button.btn.btn-yellow.collapse.in.btnpanel-warning(href='/users/mon-espace/formulaire_demande_conge')(style='width: 100%') Etat nominatif
+    .col-lg-3.col-md-6.col-sm-6.col-xs-12
+      .panel.panel-default.card-view.pa-0
+        .panel-wrapper.collapse.in
+          .panel-body.pa-0
+            .sm-data-box.bg-yellow
+              .container-fluid
+                .row
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-left
+                    span.weight-500.uppercase-font.txt-light.block(style='font-size:30px') Personnel
+                  .col-xs-6.text-center.pl-0.pr-0.data-wrap-right
+        a.button.btn.btn-yellow.collapse.in.btnpanel-warning(href='/users/mon-espace/personnel')(style='width: 100%') Personnel
+
 append jscripts
-    // Data table JavaScript
     script(src='/javascripts/admin-js/jquery.dataTables.min.js')
-    // Slimscroll JavaScript
     script(src='/javascripts/admin-js/jquery.slimscroll.js')
-    // simpleWeather JavaScript
     script(src='/javascripts/admin-js/moment.min.js')
     script(src='/javascripts/admin-js/jquery.simpleWeather.min.js')
     script(src='/javascripts/admin-js/simpleweather-data.js')
-    // Progressbar Animation JavaScript
     script(src='/javascripts/admin-js/jquery.waypoints.min.js')
     script(src='/javascripts/admin-js/jquery.counterup.min.js')
-    // Fancy Dropdown JS
     script(src='/javascripts/admin-js/dropdown-bootstrap-extended.js')
-    // Sparkline JavaScript
     script(src='/javascripts/admin-js/jquery.sparkline.min.js')
-    // Owl JavaScript
     script(src='/javascripts/admin-js/owl.carousel.min.js')
-    // ChartJS JavaScript
     script(src='/javascripts/admin-js/Chart.min.js')
-    // Morris Charts JavaScript
     script(src='/javascripts/admin-js/raphael.min.js')
     script(src='/javascripts/admin-js/morris.min.js')
     script(src='/javascripts/admin-js/jquery.toast.min.js')
-    // Switchery JavaScript
     script(src='/javascripts/admin-js/switchery.min.js')
-    // Init JavaScript
     script(src='/javascripts/admin-js/init.js')
     script(src='/javascripts/admin-js/dashboard-data.js')
     script(src='/javascripts/admin-js/custom.js')

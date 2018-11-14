@@ -3,9 +3,13 @@ var async = require('async');
 var Entite = require('../models/entite');
 var Cege = require('../models/f_cege');
 
+var Smatrimoniale = require('../models/smatrimoniale');
+var Etatagent = require('../models/etatagent');
+
 exports.personnel_page_get = function (req, res, next) {
     User.find()
         .populate('entite')
+        .populate('etatagent')
         .populate('cege')
         .exec(function (err, personnels) {
             if (err) { return next(err); }
@@ -14,8 +18,55 @@ exports.personnel_page_get = function (req, res, next) {
         });
 };
 
+exports.retraites_page_get = function (req, res, next) {
+    User.find({'etatagent':'5be42254fb6fc00d3af6aa50'})
+        .populate('entite')
+        .populate('cege')
+        .exec(function (err, personnels) {
+            if (err) { return next(err); }
+            // Successful, so render
+            res.render('plateforme/retraites', { title: 'Les retraités', personnel:  personnels});
+        });
+};
+
+exports.contractuel_page_get = function (req, res, next) {
+    User.find({'etatagent':'5bea9dcffb6fc06239e26dbf'})
+        .populate('entite')
+        .populate('cege')
+        .exec(function (err, personnels) {
+            if (err) { return next(err); }
+            // Successful, so render
+            res.render('plateforme/contractuels', { title: 'Les contractuels', personnel:  personnels});
+        });
+};
 
 
+exports.personnel_detail = function(req, res, next) {
+
+    async.parallel({
+        agent: function(callback) {
+
+            User.findById(req.params.id)
+                .populate('entite')
+                .populate('smatrimoniale')
+                .populate('cege')
+                .populate('echelle')
+                .populate('grade')
+                .populate('echelon')
+                .exec(callback);
+        }
+    }, function(err, results) {
+        if (err) { return next(err); }
+        if (results.agent==null) { // No results.
+            var err = new Error('Agent not found');
+            err.status = 404;
+            return next(err);
+        }
+        // Successful, so render.
+        res.render('plateforme/fiche_agent', { title: 'Fiche de l\'agent', agent:  results.agent} );
+    });
+
+};
 
 
 
