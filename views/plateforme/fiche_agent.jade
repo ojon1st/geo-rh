@@ -92,83 +92,83 @@ block contenu
                           // /span
                           // /Row
                           .seprator-block
-                          h3.txt-dark.capitalize-font
-                            i.zmdi.zmdi-account-box.mr-10
-                            | Situation Professionnelle
-                          hr.light-grey-hr
+                    h3.txt-dark.capitalize-font
+                      i.zmdi.zmdi-account-box.mr-10
+                      | Situation Professionnelle
+                    hr.light-grey-hr
+                    .row
+                      .col-md-6
+                        .form-group
+                          label.control-label.col-md-5 Profession:
+                          .col-md-7
+                            p.form-control-static  #{agent.profession}
+                      // /span
+                      .col-md-6
+                        .form-group
+                          label.control-label.col-md-5 Structure:
+                          .col-md-7
+                            p.form-control-static  #{agent.entite.titre}
+                      // /span
+                      // /Row
+                      .row
+                        // /span
+                        .col-md-6
+                          .form-group
+                            label.control-label.col-md-5 Date d'engagement:
+                            .col-md-7
+                              p.form-control-static  #{agent.date_engagement} 
+                        // /span
+                        .col-md-6
+                          .form-group
+                            label.control-label.col-md-5 Date de départ à la retraite:
+                            .col-md-7
+                              p.form-control-static  12/02/2025 
+                      // /Row
+                      .row
+                        .col-md-6
+                          .form-group
+                            label.control-label.col-md-5 Compétences:
+                            .col-md-7
+                              p.form-control-static  Gestion des projets,management,communication 
+                        // /span
+                        .col-md-6
+                          .form-group
+                            label.control-label.col-md-5 Poste occupé:
+                            .col-md-7
+                              p.form-control-static  #{agent.poste}
+                        // /span
+                        // /Row
+                        .row
+                          .col-md-6
+                            .form-group
+                              label.control-label.col-md-5 Catégorie:
+                              .col-md-7
+                                p.form-control-static  #{agent.cege.code_cege}
+                          // /span
+                          .col-md-6
+                            .form-group
+                              label.control-label.col-md-5 Lieu d'affectation:
+                              .col-md-7
+                                p.form-control-static  #{agent.lieu_affectation} 
+                          // /span
+                          // /Row
                           .row
                             .col-md-6
                               .form-group
-                                label.control-label.col-md-5 Profession:
+                                label.control-label.col-md-5 Direction:
                                 .col-md-7
-                                  p.form-control-static  #{agent.profession}
+                                  p.form-control-static  #{agent.entite.titre} 
                             // /span
-                            .col-md-6
-                              .form-group
-                                label.control-label.col-md-5 Structure:
-                                .col-md-7
-                                  p.form-control-static  #{agent.entite.titre}
+                            //
+                              <div class="col-md-6">
+                              <div class="form-group">
+                              <label class="control-label col-md-5">Sexe:</label>
+                              <div class="col-md-7">
+                              <p class="form-control-static"> Free </p>
+                              </div>
+                              </div>
+                              </div>
                             // /span
-                            // /Row
-                            .row
-                              // /span
-                              .col-md-6
-                                .form-group
-                                  label.control-label.col-md-5 Date d'engagement:
-                                  .col-md-7
-                                    p.form-control-static  #{agent.date_engagement} 
-                              // /span
-                              .col-md-6
-                                .form-group
-                                  label.control-label.col-md-5 Date de départ à la retraite:
-                                  .col-md-7
-                                    p.form-control-static  12/02/2025 
-                            // /Row
-                            .row
-                              .col-md-6
-                                .form-group
-                                  label.control-label.col-md-5 Compétences:
-                                  .col-md-7
-                                    p.form-control-static  Gestion des projets,management,communication 
-                              // /span
-                              .col-md-6
-                                .form-group
-                                  label.control-label.col-md-5 Poste occupé:
-                                  .col-md-7
-                                    p.form-control-static  #{agent.poste}
-                              // /span
-                              // /Row
-                              .row
-                                .col-md-6
-                                  .form-group
-                                    label.control-label.col-md-5 Catégorie:
-                                    .col-md-7
-                                      p.form-control-static  #{agent.cege.code_cege}
-                                // /span
-                                .col-md-6
-                                  .form-group
-                                    label.control-label.col-md-5 Lieu d'affectation:
-                                    .col-md-7
-                                      p.form-control-static  #{agent.lieu_affectation} 
-                                // /span
-                                // /Row
-                                .row
-                                  .col-md-6
-                                    .form-group
-                                      label.control-label.col-md-5 Direction:
-                                      .col-md-7
-                                        p.form-control-static  #{agent.entite.titre} 
-                                  // /span
-                                  //
-                                    <div class="col-md-6">
-                                    <div class="form-group">
-                                    <label class="control-label col-md-5">Sexe:</label>
-                                    <div class="col-md-7">
-                                    <p class="form-control-static"> Free </p>
-                                    </div>
-                                    </div>
-                                    </div>
-                                  // /span
                 .form-actions.mt-10
                   .row
                     .col-md-12.text-center
