@@ -168,7 +168,7 @@ DataTable.ext.buttons.print = {
 
 	footer: false,
 
-	autoPrint: true,
+	autoPrint: fa,
 
 	customize: null
 };
