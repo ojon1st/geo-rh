@@ -12,83 +12,174 @@ block contenu
             .panel.panel-default.card-view
                 .panel-wrapper.collapse.in
                     .panel-body
-                        h4 Etat civil
-                        br
-                        .row#detail
-                            .col-sm-6
-                                label Nom :........................................... #{agent.nom}
-                            .col-sm-6
-                                label Prénom :........................................... #{agent.prenom}
-                        br
-                        .row#detail
-                            .col-sm-6
-                                label Date de naissance :........................................... #{agent.userdob}
-                            .col-sm-6
-                                label Lieu de naissance :........................................... #{agent.userlob}
-                        br
-                        .row#detail
-                            .col-sm-6
-                                label Nationnalité :........................................... #{agent.nationnalite}
-                            .col-sm-6
-                                label Adresse :........................................... #{agent.adresse}
-                        br
-                        .row#detail
-                            .col-sm-6
-                                label Contact :........................................... #{agent.contact}
-                            .col-sm-6
-                                label Email :........................................... #{agent.email}
-                        br
-                        .row#detail
-                            .col-sm-6
-                                label Situation matrimonial :........................................... #{agent.smatrimoniale.nom}
-                            .col-sm-6
-                                label Sexe :........................................... #{agent.genre}
-
-            .panel.panel-default.card-view
-                .panel-wrapper.collapse.in
-                    .panel-body
-                        h4 Situation professionnelle
-                        br
-                        .row#detail
-                            .col-sm-6
-                                label Profession :........................................... #{agent.profession}
-                            .col-sm-6
-                                label Structure :........................................... #{agent.entite.titre}
-                        br
-                        br
-                        .row#detail
-                            .col-sm-6
-                                label Date d'engagement :........................................... #{agent.date_engagement}
-                            .col-sm-6
-                                label Date de départ à la retraite :........................................... 12/02/2025
-                        br
-                        br
-                        .row#detail
-                            .col-sm-6
-                                label Compétences :........................................... Gestion des projets,management,communication
-                            .col-sm-6
-                                label Poste occupé :........................................... #{agent.poste}
-                        br
-                        br
-                        .row#detail
-                            .col-sm-6
-                                label Catégorie :........................................... #{agent.cege.code_cege}
-                            .col-sm-6
-                                label Lieu d'affectation :........................................... #{agent.lieu_affectation}
-                        br
-                        br
-                        .row#detail
-
-                            .col-sm-10
-                                label Direction :........................................... #{agent.entite.titre}
-
-
-    .row
-        .col-sm-12
-            .col-sm-6
-                button.btn.btn-success.btn-outline.fancy-button.btn-0 Imprimer la fiche
-            .col-sm-offset-4.col-sm-2
-                a(href='/users/mon-espace/personnel').btn.btn-warning.btn-outline.fancy-button.btn-0 Fermer
+                      .form-wrap
+                        form#impression_fiche_agent.form-horizontal.col-xs-12(role='form')
+                          .form-body
+                            h3.txt-dark.capitalize-font
+                              i.zmdi.zmdi-account.mr-10
+                              | Etat Civil
+                            hr.light-grey-hr
+                            .row.info_ligne
+                              .col-md-6.col-sm-6.col-xs-6
+                                .form-group
+                                  label.control-label.col-md-5.col-sm-5.col-xs-5 Prénom:
+                                  .col-md-7.col-sm-7.col-xs-7
+                                    p.form-control-static  #{agent.prenom} 
+                              // /span
+                              .col-md-6.col-sm-6.col-xs-6
+                                .form-group
+                                  label.control-label.col-md-5.col-sm-5.col-xs-5 Nom:
+                                  .col-md-7.col-sm-7.col-xs-7
+                                    p.form-control-static  #{agent.nom} 
+                              // /span
+                            .page-break
+                            // /Row
+                            .row
+                              // /span
+                              .col-md-6
+                                .form-group
+                                  label.control-label.col-md-5 Date de naissance:
+                                  .col-md-7
+                                    p.form-control-static  #{agent.userdob}
+                              // /span
+                              .col-md-6
+                                .form-group
+                                  label.control-label.col-md-5 Lieu de naissance:
+                                  .col-md-7
+                                    p.form-control-static  #{agent.userlob}
+                            // /Row
+                            .page-break
+                            .row
+                              .col-md-6
+                                .form-group
+                                  label.control-label.col-md-5 Nationnalité:
+                                  .col-md-7
+                                    p.form-control-static  #{agent.nationnalite}
+                              // /span
+                              .col-md-6
+                                .form-group
+                                  label.control-label.col-md-5 Adresse:
+                                  .col-md-7
+                                    p.form-control-static  #{agent.adresse}
+                              // /span
+                              // /Row
+                              .row
+                                .col-md-6
+                                  .form-group
+                                    label.control-label.col-md-5 Contact:
+                                    .col-md-7
+                                      p.form-control-static  #{agent.contact}
+                                // /span
+                                .col-md-6
+                                  .form-group
+                                    label.control-label.col-md-5 E-mail:
+                                    .col-md-7
+                                      p.form-control-static  #{agent.email}
+                                // /span
+                                // /Row
+                                .row
+                                  .col-md-6
+                                    .form-group
+                                      label.control-label.col-md-5 Situation matrimoniale:
+                                      .col-md-7
+                                        p.form-control-static  #{agent.smatrimoniale.nom}
+                                  // /span
+                                  .col-md-6
+                                    .form-group
+                                      label.control-label.col-md-5 Sexe:
+                                      .col-md-7
+                                        p.form-control-static  #{agent.genre}
+                                  // /span
+                                  // /Row
+                                  .seprator-block
+                                  h3.txt-dark.capitalize-font
+                                    i.zmdi.zmdi-account-box.mr-10
+                                    | Situation Professionnelle
+                                  hr.light-grey-hr
+                                  .row
+                                    .col-md-6
+                                      .form-group
+                                        label.control-label.col-md-5 Profession:
+                                        .col-md-7
+                                          p.form-control-static  #{agent.profession}
+                                    // /span
+                                    .col-md-6
+                                      .form-group
+                                        label.control-label.col-md-5 Structure:
+                                        .col-md-7
+                                          p.form-control-static  #{agent.entite.titre}
+                                    // /span
+                                    // /Row
+                                    .row
+                                      // /span
+                                      .col-md-6
+                                        .form-group
+                                          label.control-label.col-md-5 Date d'engagement:
+                                          .col-md-7
+                                            p.form-control-static  #{agent.date_engagement} 
+                                      // /span
+                                      .col-md-6
+                                        .form-group
+                                          label.control-label.col-md-5 Date de départ à la retraite:
+                                          .col-md-7
+                                            p.form-control-static  12/02/2025 
+                                    // /Row
+                                    .row
+                                      .col-md-6
+                                        .form-group
+                                          label.control-label.col-md-5 Compétences:
+                                          .col-md-7
+                                            p.form-control-static  Gestion des projets,management,communication 
+                                      // /span
+                                      .col-md-6
+                                        .form-group
+                                          label.control-label.col-md-5 Poste occupé:
+                                          .col-md-7
+                                            p.form-control-static  #{agent.poste}
+                                      // /span
+                                      // /Row
+                                      .row
+                                        .col-md-6
+                                          .form-group
+                                            label.control-label.col-md-5 Catégorie:
+                                            .col-md-7
+                                              p.form-control-static  #{agent.cege.code_cege}
+                                        // /span
+                                        .col-md-6
+                                          .form-group
+                                            label.control-label.col-md-5 Lieu d'affectation:
+                                            .col-md-7
+                                              p.form-control-static  #{agent.lieu_affectation} 
+                                        // /span
+                                        // /Row
+                                        .row
+                                          .col-md-6
+                                            .form-group
+                                              label.control-label.col-md-5 Direction:
+                                              .col-md-7
+                                                p.form-control-static  #{agent.entite.titre} 
+                                          // /span
+                                          //
+                                            <div class="col-md-6">
+                                            <div class="form-group">
+                                            <label class="control-label col-md-5">Sexe:</label>
+                                            <div class="col-md-7">
+                                            <p class="form-control-static"> Free </p>
+                                            </div>
+                                            </div>
+                                            </div>
+                                          // /span
+                        .form-actions.mt-10
+                          .row
+                            .col-md-12.text-center
+                              button.btn.btn-primary.btn-icon.left-icon.mr-10(type='submit', onclick='printFicheAgent()')
+                                i.zmdi.zmdi-print
+                                span Imprimer
+                              button.btn.btn-info.btn-icon.left-icon.mr-10(type='submit')
+                                i.zmdi.zmdi-edit
+                                span Modifier
+                              a(href='/users/mon-espace/personnel').btn.btn-default(type='button') Retour vers la lIste des Agents
+                          // <div class="col-md-6"> </div>
 
 
 append jscripts
@@ -99,3 +190,15 @@ append jscripts
     script(src='/javascripts/admin-js/dropdown-bootstrap-extended.js')
     script(src='/javascripts/admin-js/init.js')
     script(src='/javascripts/admin-js/custom.js')
+    script(src='/javascripts/print.min.js')
+    script(type='text/javascript').
+      function printFicheAgent() {
+      const style = ''
+      printJS({
+      printable: 'impression_fiche_agent',
+      header: 'Fiche Agent -- Matricule N°',
+      type: 'html',
+      style: style,
+      //scanStyles: false
+      });
+      }
